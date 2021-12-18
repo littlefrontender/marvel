@@ -27,14 +27,24 @@
             height: 200px;
             object-fit: cover;
             transform: translate(-15px, -15px);
-            &.contain {
-                object-fit: contain;
-            }
         }
-        &:focus {
+        &_selected {
             box-shadow: 0 5px 20px $main-color;
             transform: translateY(-8px);
-            outline: none;
+        }
+        &-enter {
+            opacity: 0;
+        }
+        &-enter-active {
+            opacity: 1;
+            transition: opacity 500ms ease-in;
+        }
+        &-exit {
+            opacity: 1;
+        }
+        &-exit-active {
+            opacity: 0;
+            transition: opacity 500ms ease-in;
         }
     }
     &__name {
@@ -43,26 +53,5 @@
         line-height: 29px;
         text-transform: uppercase;
         color: #fff;
-    }
-    &__item-enter {
-        opacity: 0;
-        transform: scale(1.1);
-      }
-      
-    &__item-enter-active {
-        opacity: 1;
-        transform: scale(1);
-        transition: opacity 500ms, transform 500ms;
-    }
-    
-    &__item-exit {
-        opacity: 1;
-        transform: scale(1);
-    }
-    
-    &__item-exit-active {
-        opacity: 0;
-        transform: scale(0.9);
-        transition: opacity 500ms, transform 500ms;
-    }
+    } 
 }
